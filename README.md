@@ -1,1 +1,1 @@
-Career Pulse
+Career Pulse is a platform aimed at helping job seekers navigate through their job searching journey more smoothly by capturing the best opportunities from across and beyond the most suitable positions and posts from acrros the globe.
