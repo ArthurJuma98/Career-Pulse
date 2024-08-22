@@ -2,6 +2,7 @@ const express = require('express');
 const connectDB  = require('./config/db');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
+const jobRoutes = require('./routes/jobRoutes');
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/jobs', jobRoutes);
 
 const PORT = process.env.PORT || 5000;
 
