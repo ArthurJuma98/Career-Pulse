@@ -22,8 +22,30 @@ exports.createJob = async (req, res) => {
 
 exports.getJobs = async (req, res) => {
     try {
-        const jobs = await Job.find().populate('company', 'name email');
+        const { search, location, jobType, sortBy } = req.query;
+
+        let query = {};
+
+        if (search) {
+            query.title = { $regex: search, $options: 'i' };    //case insensitive search
+        }
+
+        if (location) {
+            query.title = { $regex: location, $options: 'i' };  //case insensitive search
+        }
+
+        if (jobType) {
+            query.title = jobType;
+        }
+
+        const sortOptions = {};
+        if (sortBy) {
+            sortOptions[sortBy] = 1; //specific to field in ascending order
+        }
+
+        const jobs = await Job.find(query).populate('company', 'name email').sort(sortOptions);
         res.status(200).json(jobs)
+        
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
