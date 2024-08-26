@@ -24,12 +24,21 @@ exports.applyForJob = async (req, res) => {
     }
 };
 
-exports.getApplications  = async (req, res) => {
+exports.getApplications = async (req, res) => {
     try {
         const applications = await Application.find({ applicant: req.user._id }).populate('job');
         res.status(200).json(applications);
     } catch (error) {
         res.status(500).json({ message: error.message })
+    }
+};
+
+exports.getJobApplications = async (req, res) => {
+    try {
+        const applications = await Application.find({ job: req.params.jobId }).populate('applicant');
+        res.status(200).json(applications);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
     }
 };
 
