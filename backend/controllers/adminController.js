@@ -9,7 +9,7 @@ exports.getDashboardData = async (req, res) => {
         const totalUsers = await User.countDocuments();
 
         const recentJobs = await Job.find().sort({ createdAt: -1 }).limit(5);
-        const recentApplications = await Appliction.find().sort({ appliedAt: -1 }).limit(5);
+        const recentApplications = await Application.find().sort({ appliedAt: -1 }).limit(5);
 
         res.status(200).json({
             totalJobs,
