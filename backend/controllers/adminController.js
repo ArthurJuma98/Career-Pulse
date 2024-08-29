@@ -22,3 +22,12 @@ exports.getDashboardData = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+exports.getAllJobs = async (req, res) => {
+    try {
+        const jobs = await Job.find().populate('company', 'name email');
+        res.status(200).json(jobs);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
