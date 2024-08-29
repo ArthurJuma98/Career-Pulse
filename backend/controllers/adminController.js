@@ -55,7 +55,7 @@ exports.updateJob = async (req, res) => {
             res.status(404).json({ message: 'job not found!' });
         }
 
-        //validate if logged-in user is the job poster
+        //validate if logged-in user is the admin
 
         if (job.company.toString() !== req.user._id.toString()) {
             return res.status(403).json({ message: 'Not Authorized to update this job!' })
@@ -84,7 +84,7 @@ exports.deleteJob = async (req, res) => {
             return res.status(404).json({ message: 'job not found!' })
         }
 
-        //validate if logged-in user is the job poster
+        //validate if logged-in user is the admin
 
         if (job.company.toString() !== req.user._id.toString()) {
             return res.status(403).json({ message: 'Not Authorized to delete this job!' });
