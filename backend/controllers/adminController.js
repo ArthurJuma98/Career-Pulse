@@ -96,3 +96,12 @@ exports.deleteJob = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+
+exports.getAllApplications = async (req, res) => {
+    try {
+        const applications = await Application.find().populate('job applicant');
+        res.status(200).json(applications);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
