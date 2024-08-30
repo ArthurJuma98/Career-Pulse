@@ -11,4 +11,9 @@ router.get('/jobs/:id', protect, admin, getJobDetails);
 router.put('/jobs/:id', protect, admin, updateJob);
 router.delete('/jobs/:id', protect, admin, deleteJob);
 
+router.get('/applications', protect, admin, getAllApplications);
+router.get('/applications', protect, admin, getApplicationDetails);
+router.put('/applcations', protect, admin, updateApplicationStatus);
+router.delete('/applications', protect, admin, deleteApplicaton);
+
 module.exports = router;
