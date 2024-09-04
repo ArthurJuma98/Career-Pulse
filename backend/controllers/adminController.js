@@ -177,7 +177,7 @@ exports.updateUser = async (req, res) => {
     }
 };
 
-exports deleteUser = async (req, res) => {
+exports.deleteUser = async (req, res) => {
     try {
         const user = await User.findByIdAndDelete(req.params.id);
 
