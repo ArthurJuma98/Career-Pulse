@@ -14,4 +14,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
         jobsContainer.appendChild(jobDiv);
     });
-})
+
+document.getElementById('search').addEventListener('input', function () {
+    const query = this.value.toLowerCase();
+    const jobDivs = document.querySelectorAll('.job');
+
+    jobDivs.forEach(div => {
+        const title = div.querySelector('h2').textContent.toLowerCase();
+        if (title.includes(query)) {
+            div.style.display = 'block';
+        } else {
+            div.style.display = 'none';
+        }
+    });
+});
+
+});
