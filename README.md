@@ -214,7 +214,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or support, please contact:
 - **Developer**: Arthur Ochilo
-- **Email**: arthur@example.com
-- **GitHub**: [arthur-ochilo](https://github.com/arthur-ochilo)
+- **Email**: arthujuma98@gmailcom
+- **GitHub**: [arthur-ochilo](https://github.com/ArthurJuma98)
 
 ---
